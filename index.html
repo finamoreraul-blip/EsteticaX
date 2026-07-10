@@ -1,50 +1,528 @@
-<style>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>esteticaX | Nails & Pestañas Tres Arroyos</title>
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
-    body{font-family:'Poppins',sans-serif;margin:0;background:#FFF8F5;color:#333;font-size:16px}
-.header{background:linear-gradient(135deg, #FFB8D1 0%, #FF6B9D 100%);padding:40px 20px;text-align:center;color:white}
-.logo{font-size:3.5rem;font-weight:900;letter-spacing:3px;margin:0}
-.slogan{font-size:1.2rem;margin-top:10px;opacity:0.9}
-.portada{width:100%;max-height:500px;object-fit:cover;display:block}
-.section{padding:60px 20px;max-width:900px;margin:auto}
-    h2{text-align:center;font-size:2.5rem;color:#FF6B9D;margin-bottom:40px}
-.info-box{background:white;border-radius:20px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.08);margin-bottom:40px;text-align:center;border:2px solid #FFB8D1} /* borde rosa */
-.info-box h3{color:#FF6B9D;margin-top:0;font-size:1.6rem}
-.info-item{margin:15px 0;font-size:1.2rem}
-.servicio-card{background:white;border-radius:20px;padding:30px;box-shadow:0 4px 20px rgba(255,184,209,0.3);margin-bottom:30px;text-align:center;border:1px solid #FFB8D1} /* sombra rosa */
-.servicio-nombre{font-size:1.7rem;font-weight:bold;color:#333;margin:0}
-.servicio-nombre::before{content:"💅 ";} /* uñita antes del título */
-.servicio-precio{font-size:1.4rem;color:#FF6B9D;font-weight:bold;margin:8px 0 20px 0}
-.servicio-desc{color:#666;margin-bottom:20px;font-size:1.1rem}
-.carrusel-contenedor{position:relative;width:100%;max-width:400px;margin:0 auto 20px auto;border-radius:15px;overflow:hidden;border:3px solid #FFB8D1} /* marco rosa al carrusel */
-.carrusel{position:relative;width:100%;height:400px}
-.slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 0.5s ease-in-out}
-.slide.activo{opacity:1}
-.slide img{width:100%;height:100%;object-fit:cover;border-radius:15px}
-.flecha{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,184,209,0.9);border:none;color:white;font-size:24px;padding:10px 15px;border-radius:50%;cursor:pointer;z-index:10} /* flechas rosas */
-.flecha:hover{background:#FF6B9D}
-.prev{left:10px}.next{right:10px}
-.puntos{text-align:center;margin-top:12px}
-.punto{display:inline-block;width:10px;height:10px;background:#FFB8D1;border-radius:50%;margin:0 5px;cursor:pointer}
-.punto.activo{background:#FF6B9D;transform:scale(1.3)}
-.btn-agendar{background:linear-gradient(135deg, #FFB8D1 0%, #FF6B9D 100%);color:white;padding:16px 35px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;text-align:center;margin-top:10px;border:none;cursor:pointer;font-size:1.1rem;box-shadow:0 4px 15px rgba(255,107,157,0.3)} /* degradado rosa */
-.btn-agendar:hover{transform:scale(1.05);transition:0.3s}
-    
-/* POPUP FEMENINO */
-.popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(255,184,209,0.5);z-index:1000;justify-content:center;align-items:center;backdrop-filter:blur(5px)} /* fondo rosa difuminado */
-.popup-contenido{background:white;width:90%;max-width:700px;height:80%;border-radius:25px;position:relative;padding:20px;border:4px solid #FFB8D1;box-shadow:0 0 30px rgba(255,107,157,0.4)}
-.cerrar{position:absolute;top:10px;right:20px;font-size:30px;cursor:pointer;color:#FF6B9D;font-weight:bold}
-.cerrar:hover{color:#FF1493}
-.popup-header{text-align:center;padding-bottom:10px;border-bottom:2px dashed #FFB8D1;margin-bottom:10px} /* separador rosa */
-.popup-header h3{color:#FF6B9D;margin:0;font-size:1.5rem}
-.popup-header p{color:#999;margin:5px 0 0 0;font-size:0.9rem}
-.popup iframe{width:100%;height:calc(100% - 60px);border:none;border-radius:15px}
-.btn-wpp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.2);z-index:999}
 
-  @media (max-width: 768px){
-  .logo{font-size:2.5rem}
-    h2{font-size:2rem}
-  .servicio-nombre{font-size:1.4rem}
-  .section{padding:40px 15px}
-  .carrusel{height:300px}
-  }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #FFF8F5;
+      color: #333;
+      font-size: 16px;
+    }
+
+   .header {
+      background: linear-gradient(135deg, #FFB8D1 0%, #FF6B9D 100%);
+      padding: 40px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+   .header::after {
+      content: "💅 ✨ 💅";
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      font-size: 1.5rem;
+      opacity: 0.3;
+    }
+
+   .logo {
+      font-size: 3.5rem;
+      font-weight: 900;
+      letter-spacing: 3px;
+      margin: 0;
+    }
+
+   .slogan {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      opacity: 0.9;
+    }
+
+   .portada {
+      width: 100%;
+      max-height: 500px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 5px solid #FFB8D1;
+    }
+
+   .section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #FF6B9D;
+      margin-bottom: 40px;
+    }
+
+    h2::before, h2::after {
+      content: "✨";
+      margin: 0 10px;
+    }
+
+   .info-box {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(255,184,209,0.3);
+      margin-bottom: 40px;
+      text-align: center;
+      border: 2px solid #FFB8D1;
+    }
+
+   .info-box h3 {
+      color: #FF6B9D;
+      margin-top: 0;
+      font-size: 1.6rem;
+    }
+
+   .info-item {
+      margin: 15px 0;
+      font-size: 1.2rem;
+    }
+
+   .info-item b {
+      color: #FF6B9D;
+    }
+
+   .servicio-card {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(255,184,209,0.3);
+      margin-bottom: 30px;
+      text-align: center;
+      border: 1px solid #FFB8D1;
+      transition: transform 0.3s;
+    }
+
+   .servicio-card:hover {
+      transform: translateY(-5px);
+    }
+
+   .servicio-nombre {
+      font-size: 1.7rem;
+      font-weight: bold;
+      color: #333;
+      margin: 0;
+    }
+
+   .servicio-nombre::before {
+      content: "💅 ";
+    }
+
+   .servicio-precio {
+      font-size: 1.4rem;
+      color: #FF6B9D;
+      font-weight: bold;
+      margin: 8px 0 20px 0;
+    }
+
+   .servicio-desc {
+      color: #666;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+   .carrusel-contenedor {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto 20px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      border: 3px solid #FFB8D1;
+    }
+
+   .carrusel {
+      position: relative;
+      width: 100%;
+      height: 400px;
+    }
+
+   .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+   .slide.activo {
+      opacity: 1;
+    }
+
+   .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+   .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,184,209,0.9);
+      border: none;
+      color: white;
+      font-size: 24px;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      transition: 0.3s;
+    }
+
+   .flecha:hover {
+      background: #FF6B9D;
+      transform: translateY(-50%) scale(1.1);
+    }
+
+   .prev { left: 10px; }
+   .next { right: 10px; }
+
+   .puntos {
+      text-align: center;
+      margin-top: 12px;
+    }
+
+   .punto {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background: #FFB8D1;
+      border-radius: 50%;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+   .punto.activo {
+      background: #FF6B9D;
+      transform: scale(1.3);
+    }
+
+   .btn-agendar {
+      background: linear-gradient(135deg, #FFB8D1 0%, #FF6B9D 100%);
+      color: white;
+      padding: 16px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      text-align: center;
+      margin-top: 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+      box-shadow: 0 4px 15px rgba(255,107,157,0.3);
+      transition: 0.3s;
+    }
+
+   .btn-agendar:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255,107,157,0.5);
+    }
+
+   .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,184,209,0.5);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      backdrop-filter: blur(5px);
+    }
+
+   .popup-contenido {
+      background: white;
+      width: 90%;
+      max-width: 700px;
+      height: 80%;
+      border-radius: 25px;
+      position: relative;
+      padding: 20px;
+      border: 4px solid #FFB8D1;
+      box-shadow: 0 0 30px rgba(255,107,157,0.4);
+    }
+
+   .cerrar {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      color: #FF6B9D;
+      font-weight: bold;
+      z-index: 1001;
+    }
+
+   .cerrar:hover {
+      color: #FF1493;
+    }
+
+   .popup-header {
+      text-align: center;
+      padding-bottom: 10px;
+      border-bottom: 2px dashed #FFB8D1;
+      margin-bottom: 10px;
+    }
+
+   .popup-header h3 {
+      color: #FF6B9D;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+   .popup-header p {
+      color: #999;
+      margin: 5px 0 0 0;
+      font-size: 0.9rem;
+    }
+
+   .popup iframe {
+      width: 100%;
+      height: calc(100% - 60px);
+      border: none;
+      border-radius: 15px;
+    }
+
+   .btn-wpp {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      z-index: 999;
+      transition: 0.3s;
+    }
+
+   .btn-wpp:hover {
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+     .logo { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+     .servicio-nombre { font-size: 1.4rem; }
+     .section { padding: 40px 15px; }
+     .carrusel { height: 300px; }
+    }
   </style>
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">esteticaX</h1>
+  <p class="slogan">Nails & Beauty en Tres Arroyos 💅</p>
+</header>
+
+<img src="img/portada.jpg" alt="esteticaX Portada" class="portada">
+
+<section class="section">
+  <div class="info-box">
+    <h3>VISITANOS</h3>
+    <div class="info-item">📍 <b>Dirección:</b> Tu dirección acá, Tres Arroyos</div>
+    <div class="info-item">🕐 <b>Horarios:</b> Lunes a Sábados de 9:00 a 19:00hs</div>
+    <div class="info-item">📱 <b>WhatsApp:</b> 2983-XXXXXX</div>
+    <div class="info-item">📸 <b>Instagram:</b> @esteticaX</div>
+  </div>
+
+  <h2>SERVICIOS</h2>
+
+  <div class="servicio-card">
+    <h3 class="servicio-nombre">ESMALTADO SEMIPERMANENTE MANOS</h3>
+    <p class="servicio-precio">$18.000 ARS</p>
+    <div class="carrusel-contenedor" data-id="1">
+      <div class="carrusel">
+        <div class="slide activo"><img src="img/manos.jpg" alt="Manos 1"></div>
+        <div class="slide"><img src="img/manos2.jpg" alt="Manos 2"></div>
+        <div class="slide"><img src="img/manos3.jpg" alt="Manos 3"></div>
+      </div>
+      <button class="flecha prev" onclick="cambiarSlide(-1,1)">❮</button>
+      <button class="flecha next" onclick="cambiarSlide(1,1)">❯</button>
+      <div class="puntos">
+        <span class="punto activo" onclick="irASlide(0,1)"></span>
+        <span class="punto" onclick="irASlide(1,1)"></span>
+        <span class="punto" onclick="irASlide(2,1)"></span>
+      </div>
+    </div>
+    <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-nombre">ESMALTADO SEMIPERMANENTE PIES</h3>
+    <p class="servicio-precio">$20.000 ARS</p>
+    <div class="carrusel-contenedor" data-id="2">
+      <div class="carrusel">
+        <div class="slide activo"><img src="img/pies.jpg" alt="Pies 1"></div>
+        <div class="slide"><img src="img/pies2.jpg" alt="Pies 2"></div>
+        <div class="slide"><img src="img/pies3.jpg" alt="Pies 3"></div>
+      </div>
+      <button class="flecha prev" onclick="cambiarSlide(-1,2)">❮</button>
+      <button class="flecha next" onclick="cambiarSlide(1,2)">❯</button>
+      <div class="puntos">
+        <span class="punto activo" onclick="irASlide(0,2)"></span>
+        <span class="punto" onclick="irASlide(1,2)"></span>
+        <span class="punto" onclick="irASlide(2,2)"></span>
+      </div>
+    </div>
+    <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-nombre">CAPPING GEL</h3>
+    <p class="servicio-precio">$20.000 ARS</p>
+    <div class="carrusel-contenedor" data-id="3">
+      <div class="carrusel">
+        <div class="slide activo"><img src="img/kappinggel.jpg" alt="Kapping 1"></div>
+        <div class="slide"><img src="img/kappinggel2.jpg" alt="Kapping 2"></div>
+        <div class="slide"><img src="img/kappinggel3.jpg" alt="Kapping 3"></div>
+      </div>
+      <button class="flecha prev" onclick="cambiarSlide(-1,3)">❮</button>
+      <button class="flecha next" onclick="cambiarSlide(1,3)">❯</button>
+      <div class="puntos">
+        <span class="punto activo" onclick="irASlide(0,3)"></span>
+        <span class="punto" onclick="irASlide(1,3)"></span>
+        <span class="punto" onclick="irASlide(2,3)"></span>
+      </div>
+    </div>
+    <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-nombre">EXTENSIÓN SOFT GEL</h3>
+    <p class="servicio-precio">$23.000 ARS</p>
+    <div class="carrusel-contenedor" data-id="4">
+      <div class="carrusel">
+        <div class="slide activo"><img src="img/softgel.jpg" alt="Soft 1"></div>
+        <div class="slide"><img src="img/softgel2.jpg" alt="Soft 2"></div>
+        <div class="slide"><img src="img/softgel3.jpg" alt="Soft 3"></div>
+      </div>
+      <button class="flecha prev" onclick="cambiarSlide(-1,4)">❮</button>
+      <button class="flecha next" onclick="cambiarSlide(1,4)">❯</button>
+      <div class="puntos">
+        <span class="punto activo" onclick="irASlide(0,4)"></span>
+        <span class="punto" onclick="irASlide(1,4)"></span>
+        <span class="punto" onclick="irASlide(2,4)"></span>
+      </div>
+    </div>
+    <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-nombre">RETIRO</h3>
+    <p class="servicio-precio">$6.000 ARS</p>
+    <p class="servicio-desc">Retiro de material con colocación incluida</p>
+    <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
+  </div>
+
+  <div class="servicio-card">
+    <h3 class="servicio-nombre">RETIRO SIN COLOCACIÓN</h3>
+    <p class="servicio-precio">$14.000 ARS</p>
+    <p class="servicio-desc">Solo retiro de material. Sin servicio posterior</p>
+    <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
+  </div>
+
+</section>
+
+<div id="popupCalendly" class="popup">
+  <div class="popup-contenido">
+    <span class="cerrar" onclick="cerrarCalendly()">&times;</span>
+    <div class="popup-header">
+      <h3>💅 Reserva tu turno en esteticaX 💅</h3>
+      <p>Elige día y horario que más te guste</p>
+    </div>
+    <iframe src="https://calendly.com/beautystudio-flor/nails?hide_event_type_details=1&hide_gdpr_banner=1&background_color=fff8f5&primary_color=ff6b9d"></iframe>
+  </div>
+</div>
+
+<a href="https://wa.me/542983XXXXXX" target="_blank" class="btn-wpp">💬</a>
+
+<script>
+  let slides = {};
+  let intervalos = {};
+
+  document.querySelectorAll('.carrusel-contenedor').forEach(cont => {
+    let id = cont.getAttribute('data-id');
+    slides[id] = 0;
+    iniciarAutoSlide(id);
+  });
+
+  function cambiarSlide(direccion, id) {
+    let contenedor = document.querySelector(`.carrusel-contenedor[data-id="${id}"]`);
+    let slidesEl = contenedor.querySelectorAll('.slide');
+    let puntosEl = contenedor.querySelectorAll('.punto');
+    slidesEl[slides[id]].classList.remove('activo');
+    puntosEl[slides[id]].classList.remove('activo');
+    slides[id] = (slides[id] + direccion + slidesEl.length) % slidesEl.length;
+    slidesEl[slides[id]].classList.add('activo');
+    puntosEl[slides[id]].classList.add('activo');
+    reiniciarAutoSlide(id);
+  }
+
+  function irASlide(n, id) {
+    let contenedor = document.querySelector(`.carrusel-contenedor[data-id="${id}"]`);
+    let slidesEl = contenedor.querySelectorAll('.slide');
+    let puntosEl = contenedor.querySelectorAll('.punto');
+    slidesEl[slides[id]].classList.remove('activo');
+    puntosEl[slides[id]].classList.remove('activo');
+    slides[id] = n;
+    slidesEl[slides[id]].classList.add('activo');
+    puntosEl[slides[id]].classList.add('activo');
+    reiniciarAutoSlide(id);
+  }
+
+  function iniciarAutoSlide(id) {
+    intervalos[id] = setInterval(() => {
+      cambiarSlide(1, id);
+    }, 3000);
+  }
+
+  function reiniciarAutoSlide(id) {
+    clearInterval(intervalos[id]);
+    iniciarAutoSlide(id);
+  }
+
+  function abrirCalendly() {
+    document.getElementById('popupCalendly').style.display = 'flex';
+  }
+
+  function cerrarCalendly() {
+    document.getElementById('popupCalendly').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

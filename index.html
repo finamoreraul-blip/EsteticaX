@@ -2,23 +2,25 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>esteticaX | Nails & Pestañas Tres Arroyos</title>
   <style>
-    body{font-family:'Poppins',sans-serif;margin:0;background:#FFF8F5;color:#333}
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap');
+    body{font-family:'Poppins',sans-serif;margin:0;background:#FFF8F5;color:#333;font-size:16px}
 .header{background:linear-gradient(135deg, #FFB8D1 0%, #FF6B9D 100%);padding:40px 20px;text-align:center;color:white}
 .logo{font-size:3.5rem;font-weight:900;letter-spacing:3px;margin:0}
-.slogan{font-size:1.1rem;margin-top:10px;opacity:0.9}
+.slogan{font-size:1.2rem;margin-top:10px;opacity:0.9}
 .portada{width:100%;max-height:500px;object-fit:cover;display:block}
 .section{padding:60px 20px;max-width:900px;margin:auto}
     h2{text-align:center;font-size:2.5rem;color:#FF6B9D;margin-bottom:40px}
 .info-box{background:white;border-radius:20px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.08);margin-bottom:40px;text-align:center}
-.info-box h3{color:#FF6B9D;margin-top:0;font-size:1.5rem}
-.info-item{margin:15px 0;font-size:1.1rem}
+.info-box h3{color:#FF6B9D;margin-top:0;font-size:1.6rem}
+.info-item{margin:15px 0;font-size:1.2rem}
 .info-item b{color:#333}
 .servicio-card{background:white;border-radius:20px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.08);margin-bottom:30px;text-align:center}
-.servicio-nombre{font-size:1.6rem;font-weight:bold;color:#333;margin:0}
-.servicio-precio{font-size:1.3rem;color:#FF6B9D;font-weight:bold;margin:8px 0 20px 0}
-.servicio-desc{color:#666;margin-bottom:20px}
+.servicio-nombre{font-size:1.7rem;font-weight:bold;color:#333;margin:0}
+.servicio-precio{font-size:1.4rem;color:#FF6B9D;font-weight:bold;margin:8px 0 20px 0}
+.servicio-desc{color:#666;margin-bottom:20px;font-size:1.1rem}
 .carrusel-contenedor{position:relative;width:100%;max-width:400px;margin:0 auto 20px auto;border-radius:15px;overflow:hidden}
 .carrusel{position:relative;width:100%;height:400px}
 .slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 0.5s ease-in-out}
@@ -30,13 +32,20 @@
 .puntos{text-align:center;margin-top:12px}
 .punto{display:inline-block;width:10px;height:10px;background:#FFB8D1;border-radius:50%;margin:0 5px;cursor:pointer}
 .punto.activo{background:#FF6B9D}
-.btn-agendar{background:#FFB8D1;color:white;padding:14px 30px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;text-align:center;margin-top:10px;border:none;cursor:pointer;font-size:1rem}
+.btn-agendar{background:#FFB8D1;color:white;padding:16px 35px;border-radius:50px;text-decoration:none;font-weight:bold;display:inline-block;text-align:center;margin-top:10px;border:none;cursor:pointer;font-size:1.1rem}
 .btn-agendar:hover{background:#FF6B9D}
 .popup{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center}
 .popup-contenido{background:white;width:90%;max-width:700px;height:80%;border-radius:20px;position:relative;padding:20px}
 .cerrar{position:absolute;top:10px;right:20px;font-size:30px;cursor:pointer;color:#999}
 .popup iframe{width:100%;height:100%;border:none;border-radius:15px}
 .btn-wpp{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:30px;text-decoration:none;box-shadow:0 4px 15px rgba(0,0,0,0.2);z-index:999}
+  @media (max-width: 768px){
+  .logo{font-size:2.5rem}
+    h2{font-size:2rem}
+  .servicio-nombre{font-size:1.4rem}
+  .section{padding:40px 15px}
+  .carrusel{height:300px}
+  }
   </style>
 </head>
 <body>
@@ -46,11 +55,9 @@
   <p class="slogan">Nails & Beauty en Tres Arroyos 💅</p>
 </header>
 
-<!-- PORTADA -->
 <img src="img/portada.jpg" alt="esteticaX Portada" class="portada">
 
 <section class="section">
-
   <div class="info-box">
     <h3>VISITANOS</h3>
     <div class="info-item">📍 <b>Dirección:</b> Tu dirección acá, Tres Arroyos</div>
@@ -61,7 +68,6 @@
 
   <h2>SERVICIOS</h2>
 
-  <!-- MANOS -->
   <div class="servicio-card">
     <h3 class="servicio-nombre">ESMALTADO SEMIPERMANENTE MANOS</h3>
     <p class="servicio-precio">$18.000 ARS</p>
@@ -78,7 +84,6 @@
     <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
   </div>
 
-  <!-- PIES -->
   <div class="servicio-card">
     <h3 class="servicio-nombre">ESMALTADO SEMIPERMANENTE PIES</h3>
     <p class="servicio-precio">$20.000 ARS</p>
@@ -95,7 +100,6 @@
     <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
   </div>
 
-  <!-- KAPPING -->
   <div class="servicio-card">
     <h3 class="servicio-nombre">CAPPING GEL</h3>
     <p class="servicio-precio">$20.000 ARS</p>
@@ -112,7 +116,6 @@
     <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
   </div>
 
-  <!-- SOFT GEL -->
   <div class="servicio-card">
     <h3 class="servicio-nombre">EXTENSIÓN SOFT GEL</h3>
     <p class="servicio-precio">$23.000 ARS</p>
@@ -129,7 +132,6 @@
     <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
   </div>
 
-  <!-- RETIRO -->
   <div class="servicio-card">
     <h3 class="servicio-nombre">RETIRO</h3>
     <p class="servicio-precio">$6.000 ARS</p>
@@ -137,7 +139,6 @@
     <button class="btn-agendar" onclick="abrirCalendly()">AGENDAR TURNO</button>
   </div>
 
-  <!-- RETIRO SIN -->
   <div class="servicio-card">
     <h3 class="servicio-nombre">RETIRO SIN COLOCACIÓN</h3>
     <p class="servicio-precio">$14.000 ARS</p>
@@ -150,7 +151,7 @@
 <div id="popupCalendly" class="popup">
   <div class="popup-contenido">
     <span class="cerrar" onclick="cerrarCalendly()">&times;</span>
-    <iframe src="https://calendly.com/beautystudio-flor/nails"></iframe>
+    <iframe src="https://calendly.com/beautystudio-flor/nails?hide_event_type_details=1&hide_gdpr_banner=1&background_color=fff8f5&primary_color=ff6b9d"></iframe>
   </div>
 </div>
 
